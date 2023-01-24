@@ -15,12 +15,14 @@ public:
 	{
 		cout << "binary right: "; // Bit moving to one right
 		for (int i = 1; i < 9; i++) {	binary.at(i) = binary.at(i + 1);	}
+		printing();
 	}
 
 	void BitLeft() 
 	{
 		cout << "binary left: "; // Bit moving to one left 
 		for (int i = 1; i < 9; i++) {	binary.at(9-i) = binary.at(8-i);	}
+		printing();
 	}
 
 	/*	all code works on non-reversed vector of numbers,
@@ -30,7 +32,7 @@ public:
 	void printing() // Printing in reverse 
 	{
 		cout << endl;
-		for (int i = 9; i >= 1; i--) {	cout << binary.at(i);	}
+		for (int i = 8; i >= 1; i--) {	cout << binary.at(i);	}
 		cout << endl; cout << endl;
 	}
 
@@ -40,12 +42,8 @@ public:
 		{
 			result.at(0) = number;
 
-			if (number > 255) {
-				throw(number);
-			}
-			if (number < 0) {
-				throw "Lower than 0";
-			}
+			if (number > 255) {	throw(number);	}
+			if (number < 0) {	throw "Lower than 0";	}
 
 			for (int x = 1; x <= 8; x++) // Converting to Binary 
 			{
@@ -53,18 +51,10 @@ public:
 				binary.at(x) = result.at(iter) % 2;
 				iter++;
 			}
-			cout << "converted to binary:";
-
+			cout << "\nconverted to binary:";
 			printing();
-
 			BitLeft();
-
-			printing();
-
 			BitRight();
-
-			printing();
-
 			return 0;
 		}
 
