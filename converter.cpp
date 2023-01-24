@@ -26,8 +26,8 @@ public:
 	}
 
 	/*	all code works on non-reversed vector of numbers,
-		for example: 11110000(2) = 15(10), but here I do
-		reverse for that view of number 00001111;			*/ 
+		for example: 11110000(2) = 15(10), but here code
+		prints in reverse way for that view of number 00001111;			*/ 
 
 	void printing() // Printing in reverse 
 	{
